@@ -14,6 +14,12 @@ $ npm install --save gray-matter-editor
 
 Please see the [changelog](CHANGELOG.md)
 
+
+## Warning
+
+<h4 style='color:#dc3545;'>BACKUP before using gray-matter-editor</h3>
+<h4 style='color:#dc3545;'>使用gray-matter-editor前，请备份文件</h3>
+
 ## Usage
 
 ```javascript
@@ -35,6 +41,6 @@ editor($FILE_PATH, (data) => ({
 
 **Params**
 
-* `path` **{String}**: file path
-* `transform-hook` **{Function: Object => Object}**: oldData=>newData, call with old matter-data, return new matter-data
-* `options` **{Object}** {delims = '---'}
+- `path` **{String}**: file path
+- `transform-hook` **{Function: Object => Object}**: oldData=>newData, call with old matter-data, return new matter-data
+- `options` **{Object}** {delims = '---'}
