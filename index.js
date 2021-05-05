@@ -5,6 +5,27 @@ const DEFAUL_CONFIG = {
   delims: '---',
 };
 
+function getPreTab(i = 0) {
+  if (i < 1) return '';
+  var pre = '';
+  for (let index = 0; index < i; index++) {
+    pre += '  ';
+  }
+  return pre;
+}
+
+function dfs(obj, level = 0) {
+  return Object.entries(obj)
+    .map(([key, value]) => {
+      if (Object.prototype.toString.call(value) === '[object Object]') {
+        return `${getPreTab(level)}${key}:\n${dfs(value, level + 1)}`;
+      } else {
+        return `${getPreTab(level)}${key}: ${value}\n`;
+      }
+    })
+    .reduce((pre, v) => pre + v, '');
+}
+
 /**
  * @description stringfly matterData
  * @author Yrobot
@@ -15,9 +36,7 @@ const DEFAUL_CONFIG = {
  */
 function matterDataStringify(data = {}, config = {}) {
   const { delims } = config;
-  return `${delims}\n${Object.entries(data)
-    .map(([key, value]) => `${key}: ${value}\n`)
-    .reduce((pre, v) => pre + v, '')}${delims}\n`;
+  return `${delims}\n${dfs(data)}${delims}\n`;
 }
 
 /**
