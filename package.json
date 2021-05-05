@@ -1,0 +1,26 @@
+{
+  "name": "gray-matter-editor",
+  "version": "1.0.0",
+  "description": "an esay way to edit gray-matter-data in nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yrobot/gray-matter-editor.git"
+  },
+  "keywords": [
+    "gray-matter",
+    "nodejs"
+  ],
+  "author": "yrobot",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Yrobot/gray-matter-editor/issues"
+  },
+  "homepage": "https://github.com/Yrobot/gray-matter-editor#readme",
+  "peerDependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
